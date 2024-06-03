@@ -1,0 +1,50 @@
+
+
+
+.social-icon {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  background: rgba(217, 217, 217, 0.1);
+  display: inline-flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative; /* Necesario para el pseudo-elemento ::before */
+}
+
+/* Pseudo-elemento para .social-icon */
+.social-icon::before {
+  content: "";
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.3s ease-in-out;
+}
+
+/* Hover para .social-icon */
+.social-icon:hover::before {
+  transform: scale(1);
+}
+
+/* Estilos para img dentro de .social-icon */
+.social-icon img {
+  width: 55%;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+}
+
+.social-icon svg {
+  fill: transparent; /* Inicialmente sin relleno */
+  transition: fill 0.2s ease-in-out 0.1s; /* Transición con delay para el fill */
+}
+/* Hover para img dentro de .social-icon */
+.social-icon:hover svg {
+  fill: rgb(0, 0, 0);
+  filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+}
